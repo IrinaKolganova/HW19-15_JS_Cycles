@@ -25,12 +25,12 @@ function addTask(){
 
     function activationClearBtn(){
         let result = toDo.value;
-        if (result.length === ""){clearBtn.setAttribute('disabled',true);}
-        else{
+        if (result.length !== ""){        
             clearBtn.removeAttribute('disabled');
-            result.addEventListener(activationClearBtn);
-                }}
-                //В этой части не понимаю, почему кнопка при отсутствии символов не становится неактивной?
+                            }
+                           }
+                           result.addEventListener('click', activationClearBtn);
+                //В этой части не понимаю, почему кнопка при появлении списка не становится активной?
 
               
                function clearTasks(){toDo.value="";}
