@@ -13,7 +13,7 @@ const toDo = document.querySelector('#toDo');
 const clearBtn = document.querySelector('#clearBtn');
 
 function addTask(){
-    let taskToDo = document.createElement("p");
+    let taskToDo = document.createElement("div");
     let taskText = task.value;
     taskToDo.textContent=taskText;
     toDo.append(taskToDo);
@@ -24,12 +24,13 @@ function addTask(){
     addBtn.addEventListener('click', addTask);
 
     function activationClearBtn(){
-        let result = toDo.value;
-        if (result.length !== ""){        
+        let result = toDo.innerHTML;
+        if (result.length != ""){        
             clearBtn.removeAttribute('disabled');
-                            }
+               }
+               result.addEventListener('click', activationClearBtn); 
                            }
-                           result.addEventListener('click', activationClearBtn);
+                           
                 //В этой части не понимаю, почему кнопка при появлении списка не становится активной?
 
               
