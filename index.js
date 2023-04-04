@@ -20,25 +20,17 @@ function addTask(){
     let listCheckbox = document.createElement("input");
     listCheckbox.setAttribute("type", "checkbox");
     taskToDo.append(listCheckbox);
-    }
+
+    if (toDo.innerHTML.length != ""){        
+                clearBtn.removeAttribute("disabled");
+                 // if (clearBtn.disabled) {
+    //     clearBtn.disabled = false;
+    // } // Альтернативный вариант активации кнопки "очистить список"
+        }
+        task.value = '';  //обнуление значения в инпуте
+          }
     addBtn.addEventListener('click', addTask);
 
-    function activationClearBtn(){
-        let result = toDo.innerHTML;
-        if (result.length != ""){        
-            clearBtn.removeAttribute('disabled');
-               }
-               result.addEventListener('click', activationClearBtn); 
-                           }
-                           
-                //В этой части не понимаю, почему кнопка при появлении списка не становится активной?
 
-              
-               function clearTasks(){toDo.value="";}
-               clearBtn.addEventListener('click', clearTasks);
-               //В этой части не понимаю, почему кнопка не очищает список по нажатию?
-
-
-   
-
-
+function clearTasks(){toDo.innerHTML="";}
+clearBtn.addEventListener('click', clearTasks);
